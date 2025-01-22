@@ -1,0 +1,230 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right top, #53d27e, #007bff);
+}
+.test_area {
+  width: 700px;
+  padding: 20px;
+  background: linear-gradient(to right top, #53d27e, #007bff);
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+   height: 600px;
+}
+.sr1, .sr2 {
+  text-align: center;
+  color: white;
+}
+.sr1 {
+  font-size: 35px;
+  margin-bottom: 10px;  /* Soruların biraz daha yukarıda durmasını sağlamak için */
+}
+.sr2 {
+  font-size: 26px;
+  margin-bottom: 20px;  /* Metnin altındaki boşluğu azaltabiliriz */
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+.option {
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 18px;
+  color: white;
+  background-color: #43bcc7;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.option:hover {
+  transform: scale(1.05);
+}
+.option.selected {
+  background-color: #0056b3;
+}
+.navigation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.nav-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+.nav-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+/* Testi bitir butonunun stili */
+.finish-button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#finish-button {
+  padding: 15px 30px;
+  background-color: #ff5733; /* Kırmızı tonunda */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#finish-button:hover {
+  background-color: #c44e2a;
+  transform: scale(1.1);
+}
+#finish-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+/* Zamanlayıcı */
+.timer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Modal için stil */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah arka plan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal-content {
+  background: linear-gradient(to right top, #5cc47e, #007bff); /* Yeşil ve mavi geçiş */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal-message {
+  font-size: 24px;
+  color: #333;
+}
+.modal-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+.modal-button:hover {
+  background-color: #0056b3;
+}
+/* Başla butonunun stili */
+.start-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px; /* Başlama butonunun yukarıda olması için margin-top değerini düşürdük */
+}
+#start-button {
+  padding: 15px 30px;
+  background-color: #28a745; /* Yeşil tonunda */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#start-button-container {
+  /* Başla butonunu ortalamak için */
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+#start-button:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+.exam-selection {
+  text-align: center;
+}
+.exam-selection h2 {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.exam-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.exam-button {
+  padding: 15px 30px;
+  background-color: #28a745; /* Yeşil */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.exam-button:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+/* Geçiş özelliği için prefix'ler ekleyelim */
+.element {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Flexbox için prefix'ler */
+.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}

@@ -1,0 +1,167 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right top, #53d27e, #007bff);
+}
+
+.login {
+  width: 500px;
+  padding: 20px;
+  background: linear-gradient(to right top, #53d27e, #007bff);
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(50px); /* Sayfanın altından yukarı doğru hareket */
+  animation: fadeInUp 1s forwards; /* Animation */
+}
+
+.lab_h1{
+  font-size: 36px;
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: right;
+  direction: rtl;
+  position: absolute;
+  top: 75px;
+}
+
+.lab_name {
+  font-size: 18px;
+  color: #ffffff; /* Text color */
+  padding: 10px;
+  text-align: right;
+  direction: rtl; /* Arapic left to right */
+  margin-top: 15px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #28a745; /* Yeşil kenarlık */
+  font-size: 16px;
+  text-align: right; /* Arapça için sağdan sola hizalama */
+  direction: rtl; /* Arapça metin sağdan sola yazılacak */
+}
+
+/* Yeni ekleme: Her iki yönden de silme işlemi için */
+input[type="text"] {
+  direction: ltr !important; /* Soldan sağa yazılabilmesini sağlar */
+}
+
+input:focus {
+  border-color: #007bff; /* Focus olduğunda kenarlık mavi */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Hafif gölge efekti */
+  outline: none; /* Varsayılan outline'ı kaldır */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+  text-align: right; /* Placeholder sağdan sola */
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+input:not(:focus)::placeholder {
+  color: #007bff; /* Placeholder'ın normal rengi */
+}
+
+.sinav_button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 80%;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.sinav_button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Buton hover ile büyür */
+}
+
+.sinav_button:active {
+  transform: scale(0.98); /* Buton tıklandığında küçülür */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Son hali */
+  }
+}
+
+.error-message, .success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  font-size: 16px;
+  z-index: 9999;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.error-message {
+  background-color: #f44336;
+}
+
+.success-message {
+  background-color: #4caf50;
+}
+
+/* Mobil ekranlar için (max genişlik: 600px) */
+@media (max-width: 600px) {
+  .login {
+    width: auto;
+    margin: auto;
+  }
+
+  .lab_name, .sinav_button {
+    width: 100%;
+    text-align: center;
+  }
+  .isim, .soyisim{
+    width: 100%;
+
+  }
+
+  .lab_h1 {
+    position: absolute;
+    top: 75px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Geçiş özelliği için prefix'ler ekleyelim */
+.element {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Flexbox için prefix'ler */
+.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}

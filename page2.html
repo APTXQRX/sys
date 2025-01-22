@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style_page2.css" />
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find"></script>
+    <title>الامتحان</title>
+  </head>
+  <body>
+    <div class="test_area">
+      <!-- Sınav Seçim Alanı -->
+      <div id="exam-selection" class="exam-selection">
+        <h2>اختار امتحانك</h2>
+        <div class="exam-buttons">
+          <button class="exam-button" onclick="selectExam('ex1')">
+            امتحان العقيدة
+          </button>
+          <button class="exam-button" onclick="selectExam('ex2')">
+            امتحان الفقه
+          </button>
+          <button class="exam-button" onclick="selectExam('ex3')">
+            امتحان اللغة العربية
+          </button>
+        </div>
+      </div>
+      <!-- Başla Butonu, Başta Gizli -->
+      <div
+        id="start-button-container"
+        class="start-button-container"
+        style="display: none"
+      >
+        <button id="start-button" onclick="startExam()">ابدأ الامتحان</button>
+      </div>
+      <!-- Zamanlayıcı başlangıçta gizli olacak -->
+      <div id="timer" class="timer" style="display: none">10:00</div>
+      <!-- Sorular başlangıçta gizli olacak -->
+      <div class="question" style="display: none">
+        <p class="sr1">السؤال <span class="question-number">1</span></p>
+        <p class="sr2">... سوف يكتب السؤل هنا ...</p>
+        <div class="options">
+          <button class="option" onclick="selectOption(0)">جواب A</button>
+          <button class="option" onclick="selectOption(1)">جواب B</button>
+          <button class="option" onclick="selectOption(2)">جواب C</button>
+          <button class="option" onclick="selectOption(3)">جواب D</button>
+        </div>
+      </div>
+      <!-- Zaman Bitince Gösterilecek Modal -->
+      <div id="time-up-modal" class="modal" style="display: none">
+        <div class="modal-content">
+          <p class="modal-message">انتهاء الوقت اظهار النتائج</p>
+          <button class="modal-button" onclick="goToResults()">تم</button>
+        </div>
+      </div>
+      <!-- Navigasyon Butonları -->
+      <div class="navigation" style="display: none">
+        <button
+          class="nav-button"
+          id="prev-button"
+          onclick="changeQuestion(-1)"
+        >
+          ⬅ العودة
+        </button>
+        <button class="nav-button" id="next-button" onclick="changeQuestion(1)">
+          التالى ➡
+        </button>
+      </div>
+      <!-- Testi Bitir Butonu -->
+      <div
+        id="finish-button-container"
+        class="finish-button-container"
+        style="display: none"
+      >
+        <button class="nav-button" id="finish-button" onclick="finishTest()">
+          إنهاء الاختبار
+        </button>
+      </div>
+    </div>
+    <script src="script_page2.js"></script>
+    
+  </body>
+</html>
